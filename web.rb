@@ -1,5 +1,6 @@
 # vim: ts=3 sw=3:
 require 'sinatra'
+require 'newrelic_rpm'
 
 get '/' do
 	content_type 'text/plain'
