@@ -13,7 +13,7 @@ get '/' do
 		$stdout.puts "Sleeping for #{par[:spinup]} sec for spinup"
 		$stdout.flush
 		sleep par[:spinup]
-		out << "Hello, world after #{par[:spinup]} seconds\n"
+		out << "Hello, world!, after #{par[:spinup]} seconds\n"
 		par[:repeat].times do |i|
 			msg = "Slept for #{par[:interval]} sec (#{i+1}/#{par[:repeat]})\n"
 			sleep par[:interval]
