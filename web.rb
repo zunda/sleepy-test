@@ -2,9 +2,10 @@
 require 'sinatra'
 require 'newrelic_rpm'
 
+usage='Usage: GET /?spinup=WAIT_SEC;interval=INTERVAL_SEC;repeat=REPEAT_NUMBER'
+
 get '/' do
 	content_type 'text/plain'
-	# GET /?spinup=WAIT_SEC;interval=INTERVAL_SEC;repeat=REPEAT_NUMBER
 	par = Hash.new
 	%i(spinup interval repeat).each do |k|
 		par[k] = (params[k] || 0).to_i
@@ -21,6 +22,7 @@ get '/' do
 			$stdout.flush
 			out << msg
 		end
+		out << usage + "\n"
 		out << "Good bye for now\n"
 	end
 end
