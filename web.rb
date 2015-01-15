@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'newrelic_rpm'
 
-usage='Usage: GET /?spinup=WAIT_SEC;interval=INTERVAL_SEC;repeat=REPEAT_NUMBER'
+usage='/?spinup=<WAIT_SEC>;interval=<INTERVAL_SEC>;repeat=<REPEAT_NUMBER>'
 
 get '/' do
 	content_type 'text/plain'
@@ -14,7 +14,7 @@ get '/' do
 		$stdout.puts "Sleeping for #{par[:spinup]} sec for spinup"
 		$stdout.flush
 		sleep par[:spinup]
-		out << "Hello, world!, after #{par[:spinup]} seconds\n"
+		out << "Good morning, world!, after #{par[:spinup]} seconds of sleep\n"
 		par[:repeat].times do |i|
 			msg = "Slept for #{par[:interval]} sec (#{i+1}/#{par[:repeat]})\n"
 			sleep par[:interval]
