@@ -23,6 +23,6 @@ get '/' do
 			out << msg
 		end
 		out << usage + "\n"
-		out << "Good bye for now\n"
+		out << "Good bye for now from branch-test\n"
 	end
 end
