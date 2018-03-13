@@ -1,6 +1,5 @@
 # vim: ts=3 sw=3:
 require 'sinatra'
-require 'newrelic_rpm'
 
 usage='/?spinup=<WAIT_SEC>;interval=<INTERVAL_SEC>;repeat=<REPEAT_NUMBER>'
 
@@ -23,6 +22,5 @@ get '/' do
 			out << msg
 		end
 		out << usage + "\n"
-		out << "Good bye for now from master\n"
 	end
 end
