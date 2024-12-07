@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
 ruby file: '.ruby-version'
 gem 'sinatra'
-gem "thin", "~> 1.8"
+gem "sinatra-contrib"
+gem "rackup", "~> 2.2"
+gem "puma", "~> 6.5"
